@@ -1,0 +1,64 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AVL_tree	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^struct AVL_tree {$/;"	s	file:
+AVL_tree	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^typedef struct AVL_tree AVL_tree;$/;"	t	typeref:struct:AVL_tree	file:
+AVL_tree::balance	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*balance)(Node **root);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::delete	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*delete)(Node **root, Node *node);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::h	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	int (*h)(Node *root);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::insert	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*insert)(Node **root, Node *node);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::l_r_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*l_r_rotate)(Node **root);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::l_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*l_rotate)(Node **root);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::max_node	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	Node (*max_node)(Node *root);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::min_node	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	Node (*min_node)(Node *root);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::query	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	Node *(*query)(Node *root, T_key x);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::r_l_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*r_l_rotate)(Node **root);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::r_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*r_rotate)(Node **root);$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::root	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	Node *root;$/;"	m	struct:AVL_tree	file:	access:public
+AVL_tree::visualize	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*visualize)(Node *root);$/;"	m	struct:AVL_tree	file:	access:public
+C_AVL_treee	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^AVL_tree *C_AVL_treee(Node **root) {$/;"	f	signature:(Node **root)
+MAX_N	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^const int MAX_N = 1e5 + 10;$/;"	v
+Node	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^struct Node {$/;"	s	file:
+Node	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^typedef struct Node Node;$/;"	t	typeref:struct:Node	file:
+Node::height	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	int height;$/;"	m	struct:Node	file:	access:public
+Node::key	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	T_key key;$/;"	m	struct:Node	file:	access:public
+Node::left_son	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	struct Node *left_son, *right_son;$/;"	m	struct:Node	typeref:struct:Node::Node	file:	access:public
+Node::right_son	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	struct Node *left_son, *right_son;$/;"	m	struct:Node	typeref:struct:Node::	file:	access:public
+T_key	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^typedef int T_key;$/;"	t	file:
+balance	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*balance)(Node **root);$/;"	m	struct:AVL_tree	file:	access:public
+balance	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^void balance(Node **root) {$/;"	f	signature:(Node **root)
+delete	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*delete)(Node **root, Node *node);$/;"	m	struct:AVL_tree	file:	access:public
+delete	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^void delete(Node **root, Node *node) {$/;"	f	signature:(Node **root, Node *node)
+h	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	int (*h)(Node *root);$/;"	m	struct:AVL_tree	file:	access:public
+h	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^int h(Node *root) {$/;"	f	signature:(Node *root)
+height	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	int height;$/;"	m	struct:Node	file:	access:public
+insert	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*insert)(Node **root, Node *node);$/;"	m	struct:AVL_tree	file:	access:public
+insert	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^void insert(Node **root, Node *node) {$/;"	f	signature:(Node **root, Node *node)
+key	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	T_key key;$/;"	m	struct:Node	file:	access:public
+l_r_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*l_r_rotate)(Node **root);$/;"	m	struct:AVL_tree	file:	access:public
+l_r_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^void l_r_rotate(Node **root) {$/;"	f	signature:(Node **root)
+l_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*l_rotate)(Node **root);$/;"	m	struct:AVL_tree	file:	access:public
+l_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^void l_rotate(Node **root) {$/;"	f	signature:(Node **root)
+left_son	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	struct Node *left_son, *right_son;$/;"	m	struct:Node	typeref:struct:Node::Node	file:	access:public
+ll	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^typedef long long ll;$/;"	t	file:
+main	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^int main() {$/;"	f
+max	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^T_key max(T_key a,T_key b) {$/;"	f	signature:(T_key a,T_key b)
+max_node	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	Node (*max_node)(Node *root);$/;"	m	struct:AVL_tree	file:	access:public
+max_node	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^Node *max_node(Node *root) {$/;"	f	signature:(Node *root)
+min_node	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	Node (*min_node)(Node *root);$/;"	m	struct:AVL_tree	file:	access:public
+min_node	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^Node *min_node(Node *root) {$/;"	f	signature:(Node *root)
+print	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^void print(char *ch, int num) {$/;"	f	signature:(char *ch, int num)
+query	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	Node *(*query)(Node *root, T_key x);$/;"	m	struct:AVL_tree	file:	access:public
+query	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^Node *query(Node *root, T_key x) {$/;"	f	signature:(Node *root, T_key x)
+r_l_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*r_l_rotate)(Node **root);$/;"	m	struct:AVL_tree	file:	access:public
+r_l_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^void r_l_rotate(Node **root) {$/;"	f	signature:(Node **root)
+r_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*r_rotate)(Node **root);$/;"	m	struct:AVL_tree	file:	access:public
+r_rotate	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^void r_rotate(Node **root) {$/;"	f	signature:(Node **root)
+right_son	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	struct Node *left_son, *right_son;$/;"	m	struct:Node	typeref:struct:Node::	file:	access:public
+root	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	Node *root;$/;"	m	struct:AVL_tree	file:	access:public
+ull	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^typedef unsigned long long ull;$/;"	t	file:
+visualize	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^	void (*visualize)(Node *root);$/;"	m	struct:AVL_tree	file:	access:public
+visualize	/home/zengls/repositories/A_D/data_structures/AVL-tree.c	/^void visualize(Node* root, int width){$/;"	f	signature:(Node* root, int width)

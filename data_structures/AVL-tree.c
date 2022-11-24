@@ -1,7 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
-#include<math.h>
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -16,9 +14,25 @@ struct Node {
 	struct Node *left_son, *right_son;
 };
 typedef struct Node Node;
-
+//通过函数指针，模拟面向对象
 struct AVL_tree {
 	Node *root;
+	int (*h)(Node *root);
+	void (*l_rotate)(Node **root);
+	void (*r_rotate)(Node **root);
+	void (*l_r_rotate)(Node **root);
+	void (*r_l_rotate)(Node **root);
+	void (*balance)(Node **root);
+	Node *(*max_node)(Node *root);
+	Node *(*min_node)(Node *root);
+
+
+	void (*insert)(Node **root, Node *node);
+	Node *(*query)(Node *root, T_key x);
+	void (*delete)(Node **root, Node *node);
+	void (*visualize)(Node *root, int width);
+
+
 };
 typedef struct AVL_tree AVL_tree;
 
@@ -199,28 +213,53 @@ void visualize(Node* root, int width){
 	}
 }
 
+//模拟AVL_tree的构造函数，返回一个空的AVL-tree的指针（不是空指针）。
+AVL_tree *C_AVL_tree() {
+	AVL_tree *avl_tree = (AVL_tree *)malloc(sizeof(AVL_tree));
+	avl_tree->root = NULL;
+	avl_tree->h = h;
+	avl_tree->l_rotate = l_rotate;
+	avl_tree->r_rotate = r_rotate;
+	avl_tree->l_r_rotate = l_r_rotate;
+	avl_tree->r_l_rotate = r_l_rotate;
+	avl_tree->balance = balance;
+	avl_tree->max_node = max_node;
+	avl_tree->min_node = min_node;
+	avl_tree->insert = insert;
+	avl_tree->query = query;
+	avl_tree->delete = delete;
+	avl_tree->visualize = visualize;
+	return avl_tree;
+}
+
 
 int main() {
 	int n;
+	printf("please enter the number of nodes that you want insert:\n");
 	scanf("%d", &n);
-	Node *root = NULL;
+	AVL_tree *avl_tree = C_AVL_tree();
 	while(n--) {
 		int x;
 		Node *p = (Node *)malloc(sizeof(Node));
+		printf("please enter the key of node:");
 		scanf("%d", &x);
 		p->height = 0;
 		p->key = x;
 		p->left_son = NULL;
 		p->right_son = NULL;
-		insert(&root, p);
+		avl_tree->insert(&avl_tree->root, p);
 	}
-	visualize(root, 0);
+	printf("insert operation has completed.the structure of the avl-tree is as follow.\n");
+	avl_tree->visualize(avl_tree->root, 0);
+	printf("\n=========================================================\n");
+	printf("please enter the number of nodes that you want delete");
 	scanf("%d",&n);
 	while(n--) {
 		int x;
 		scanf("%d", &x);
-		delete(&root, query(root, x));
+		printf("please enter the key of node:");
+		avl_tree->delete(&avl_tree->root, avl_tree->query(avl_tree->root, x));
 	}
-	printf("\n=========================================================\n");
-	visualize(root, 0);
+	printf("delete operation has completed.the structure of the avl-tree is as follow.\n");
+	avl_tree->visualize(avl_tree->root, 0);
 }

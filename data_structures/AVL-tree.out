@@ -1,0 +1,31 @@
+please enter the number of nodes that you want insert:
+please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:please enter the key of node:insert operation has completed.the structure of the avl-tree is as follow.
+<66><7><3><1><0>
+             <2>
+          <5><4>
+             <6>
+       <22><9><8>
+              <11>
+           <44><33>
+               <55>
+    <444><111><88><77>
+                  <99>
+              <222><200>
+                   <333>
+         <888><666><555>
+                   <777>
+              <999><1000>
+=========================================================
+please enter the number of nodes that you want deleteplease enter the key of node:please enter the key of node:please enter the key of node:delete operation has completed.the structure of the avl-tree is as follow.
+<66><7><3><2><0>
+          <5><4>
+             <6>
+       <22><9><8>
+           <44><33>
+               <55>
+    <444><200><88><77>
+                  <99>
+              <222><333>
+         <888><666><555>
+                   <777>
+              <999><1000>
