@@ -252,7 +252,7 @@ int main() {
 	printf("insert operation has completed.the structure of the avl-tree is as follow.\n");
 	avl_tree->visualize(avl_tree->root, 0);
 	printf("\n=========================================================\n");
-	printf("please enter the number of nodes that you want delete");
+	printf("please enter the number of nodes that you want delete:");
 	scanf("%d",&n);
 	while(n--) {
 		int x;
