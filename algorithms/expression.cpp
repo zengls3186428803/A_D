@@ -115,7 +115,7 @@ void init_superior_table() {
 	superior_table[MINUS][PLUS] = 1; superior_table[MINUS][MINUS] = 1; superior_table[MINUS][MULTIPLY] = 0; superior_table[MINUS][DIVIDE] = 0; superior_table[MINUS][POWER] = 0;
 	superior_table[MULTIPLY][PLUS] = 1; superior_table[MULTIPLY][MINUS] = 1; superior_table[MULTIPLY][MULTIPLY] = 1; superior_table[MULTIPLY][DIVIDE] = 1; superior_table[MULTIPLY][POWER] = 0;
 	superior_table[DIVIDE][PLUS] = 1; superior_table[DIVIDE][MINUS] = 1; superior_table[DIVIDE][MULTIPLY] = 1; superior_table[DIVIDE][DIVIDE] = 1; superior_table[DIVIDE][POWER] = 0;
-	superior_table[POWER][PLUS] = 1; superior_table[POWER][MINUS] = 1; superior_table[POWER][MULTIPLY] = 1; superior_table[POWER][DIVIDE] = 1; superior_table[POWER][POWER] = 1;
+	superior_table[POWER][PLUS] = 1; superior_table[POWER][MINUS] = 1; superior_table[POWER][MULTIPLY] = 1; superior_table[POWER][DIVIDE] = 1; superior_table[POWER][POWER] = 0;
 }
 
 int sup(int x, int y) { // return x > y
