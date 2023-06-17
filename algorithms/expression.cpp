@@ -218,8 +218,8 @@ void print_syn_tree(Syn *syn, int width) {
 	}
 	int delta = printf("%s",syn->lex->val);
 	printf("\n");
-	print_syn_tree(syn->lson, width + delta, 0);
-	print_syn_tree(syn->rson, width + delta, 1);
+	print_syn_tree(syn->lson, width + delta);
+	print_syn_tree(syn->rson, width + delta);
 }
 
 int main() {
