@@ -1,0 +1,66 @@
+# 记分牌算法
+- [记分牌算法](#记分牌算法)
+  - [算法流程](#算法流程)
+      - [流出](#流出)
+      - [读操作数](#读操作数)
+      - [执行](#执行)
+      - [写结果](#写结果)
+  - [WAW，RAW，WAR 的消除](#wawrawwar-的消除)
+      - [WAW](#waw)
+      - [RAW](#raw)
+      - [WAR](#war)
+## 算法流程
+```
+FU：当前指令要使用的功能单元
+D：目的寄存器编号                                           
+S1, S2：源操作数寄存器编号
+Op：要执行的操作
+Fj[FU]：功能单元FU的Fj字段(其他字段类似)
+Result[D]：结果写入寄存器D的功能单元名称，等于0表示未被占用
+```
+#### 流出
+流出条件：not Busy[FU] and not Result[FD](有空闲运算器 and 目的寄存器未被使用)
+流出操作：
+Busy[FU] ← yes;//部件被占用
+Op[FU] ← Op;//记录占用者的操作码
+Fi[FU] ← D;//目的寄存器编号
+Fj[FU] ← S1;//源寄存器编号
+Fk[FU] ← S2;//源寄存器编号
+Qj[FU] ← Result [S1];源寄存器占用者编号，若源寄存器未被占用，则Result [S1]为0
+Qk[FU] ← Result [S2];源寄存器占用者编号，若源寄存器未被占用，则Result [S1]为0
+Rj[FU] ← not Qj[FU];Qj[FU]为0，表示源寄存器未被占用，准备读
+Rk[FU] ← not Qk[FU];Qj[FU]为0，表示源寄存器未被占用，准备读
+Result[D] ← FU;//占用目的寄存器
+#### 读操作数
+读操作数条件：Rj[FU] and Rk[FU];//两个源操作数均已就绪
+读操作数操作：
+Rj[FU] ← no;//读走了第一个源操作数
+Rk[FU] ← no;//读走了第二个源操作数
+Qj[FU] ← 0;
+Qk[FU] ← 0;
+#### 执行
+...
+#### 写结果
+写结果条件：
+∀f ((Fj[f] ≠ Fi[FU] or Rj[f] = no) and (Fk[f] ≠ Fi[FU] or Rk[f] = no));
+$\Leftrightarrow$
+not $\exists$f ((Fj[f] == Fi[FU] and Rj[f] == yes) or (Fk[f] == Fi[FU] and Rk[f] == yes));
+（目的寄存器不是"之前"指令的源寄存器）
+写结果操作：
+具体操作：		
+∀f(if Qj[f] = FU then Rj[f] ← yes);	//如果有指令在等待该结果作为第一源操作数，将其Rj置为yes，表示数据可用
+∀f(if Qk[f] = FU then Rk[f] ← yes);	//如果有指令在等待该结果作为第二源操作数，将其Rk置为yes，表示数据可用
+Result (Fi[FU]) ← 0;//释放目的寄存器
+Busy[FU] = no;//功能单元
+
+## WAW，RAW，WAR 的消除
+#### WAW
+WAW（write after write）在流出阶段消除，因为：目的寄存器如果被使用的话，指令就不会流出，也就不会有“写后写”问题。
+#### RAW
+RAW（read after write）在读操作数阶段消除，因为：如果源寄存器被占用，Rj（Rk）就为0，不会进行读操作数操作。
+#### WAR
+WAR（write adter read）在写结果阶段消除，因为：写结果的条件判断了目的寄存器不是其他指令的源寄存器
+```
+问：消除WAR时的after体现在哪里？
+答：若Rj[f]为no，则表示另一个操作数在等我（FU）的结果 或 另一个操作数已经读完，不在需要访问我的寄存器。若Rj[f]为yes,则有，f在我之前流出，因为在我之后流出的Rj[f] 一定为no（0）
+```
